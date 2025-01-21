@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { LatestPost } from "~/app/_components/post";
+import { Button } from "~/components/ui/button";
 import { auth } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
 
@@ -60,7 +61,10 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-
+          <div className="flex flex-col gap-y-2">
+            This is a ShadCN button. If i have styling it works.
+            <Button variant="secondary" className="self-center">shadcn button</Button>
+          </div>
           {session?.user && <LatestPost />}
         </div>
       </main>
